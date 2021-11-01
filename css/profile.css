@@ -1,0 +1,62 @@
+body{
+    background-image: linear-gradient( rgb(207, 130, 238), darkviolet,midnightblue);    
+}
+
+.spider-0 .spider-1 .spider-2 .spider-3 .spider-4 .spider-5{
+    display: none;
+} 
+
+.web-right{
+    display: none;
+    visibility: hidden;
+}
+
+.web-left{
+    display: none;
+    visibility: hidden;
+}
+
+.profile-title{
+    text-align: center;
+    color: greenyellow;
+}
+
+.profile-desc{
+    text-align: center;
+    color:greenyellow;
+    font-size: larger;
+}
+
+.perfil-usuario-datos{
+    color: honeydew;
+    padding-left: 150px;
+    text-align: justify;
+    border: greenyellow dotted 5px;
+    margin-left: 450px;
+    margin-right: 300px;
+}
+
+.btn-secondary{
+    background-image: -webkit-linear-gradient(top, #44b940, #4a94c5);
+}
+
+.btn-secondary:hover{
+    background-image: -webkit-linear-gradient(top,#4a94c5 , #44b940);
+}
+
+.btn-primary{
+    background-image: -webkit-linear-gradient(top, #44b940, #4a94c5);
+}
+
+.btn-primary:hover{
+    background-image: -webkit-linear-gradient(top,#4a94c5 , #44b940);
+}
+
+.modal-body {
+    background-color: lightseagreen;
+    color: darkviolet;
+}
+
+.modal-footer{
+    background-color: lightseagreen;
+}

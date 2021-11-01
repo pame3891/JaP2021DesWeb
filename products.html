@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="css/product.css" rel="stylesheet">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div class="container-fluid">
+    
+  <nav class="site-header navbar sticky-top py-1 bg-dark">
+    <div class="container nav-menu">
+      <a class=" nav-item py-2 d-none d-md-inline-block" href="index.html"><i class="fas fa-home"></i> Inicio</a>
+      <a class="nav-link py-2 d-none d-md-inline-block" href="categories.html"><i class="fas fa-globe-americas"></i>
+        Categorías</a>
+      <a class="nav-item py-2 d-none d-md-inline-block" href="products.html"><i class="fas fa-cubes"></i> Productos</a>
+      <a class="nav-item py-2 d-none d-md-inline-block" href="sell.html"><i class="fas fa-piggy-bank"></i> Vender</a>
+      <a class="nav-item py-2 d-none d-md-inline-block" href="login.html"><i class="fas fa-door-open"></i> Login</a>
+      <div class="dropdown">
+        <button type="button" id="nombre" class="btn btn-success dropdown-toggle" data-toggle="dropdown"
+          data-display="static" aria-haspopup="true" aria-expanded="false">
+          <i class="far fa-laugh-beam fa-2x"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html"><i class="fas fa-shopping-cart fa-2x"></i> Mi carrito</a>
+          <a class="dropdown-item" href="my-profile.html"><i class="fas fa-user-secret fa-2x"></i> Mi perfil</a>
+          <a class="dropdown-item" onclick="desconectar()"><i class="fas fa-door-closed fa-2x"></i>Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+    <div class="hamburger">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+  </nav>
+
+</div>
+  <br>
+
+  <script>
+    let usuario = JSON.parse(localStorage.getItem("usuario"));
+    document.getElementById('nombre').innerHTML = usuario.nombre + " " + "está en línea";
+  </script>
+
+    <div class="searchbar">
+
+      <label class="form-control"
+        style="height: 2cm; padding-top: 15px; width: 22cm; background-color: lightgreen;"><i
+          class="fas fa-search"></i> Buscá a tu
+        favorito <input type="search" id="searchBar"> <button id="Nameasc" class="btn btn-outline-dark"><i
+            class="fas fa-sort-alpha-up fa-2x"> </i></button>
+        <button id="Namedesc" class="btn btn-outline-dark"><i class="fas fa-sort-alpha-down-alt fa-2x"></i></button>
+        <button id="rel" class="btn btn-outline-dark"><i class="fas fa-star"></i> Los más vendidos </button></label>
+
+      <p class="form-control"
+        style="height: 2cm;padding-top: 15px; width: 22cm;background-color: lightgreen;">Precio mínimo
+        <input type="number" id="minimo" value=0> Precio máximo <input type="number" id="maximo" value=0>
+        <button id="ascendente" class="btn btn-outline-dark"><i class="fas fa-sort-numeric-up fa-2x"></i></button>
+        <button id="descendente" class="btn btn-outline-dark"><i class="fas fa-sort-numeric-up-alt fa-2x"></i></button>
+      </p>
+
+    </div>
+  
+    <br>
+
+
+    <div class="album py-5 bg-light">
+      <div class="container" id="autos">
+        <div class="row" id="product-list">
+          <div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <footer class="text-muted bg-light">
+        <div class="container">
+          <p class="float-right">
+            <span class="ir-arriba icon-arrow-up2"><i class="fas fa-angle-double-up"></i></span>
+
+          </p>
+
+        </div>
+        </div>
+      </footer>
+      <div id="spinner-wrapper">
+        <div class="lds-ring">
+          <div></div>
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+      </div>
+    </div>
+  
+  
+
+    <script src="js/jquery-3.4.1.min.js"></script>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/init.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/login.js"></script>
+    <script src="js/google.js"></script>
+</body>
+
+</html>

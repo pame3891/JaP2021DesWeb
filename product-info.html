@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.3/examples/album/">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/font-awesome.min.css" rel="stylesheet">
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <link href="css/styles.css" rel="stylesheet">
+  <link href="css/product-info.css" rel="stylesheet">
+  
+</head>
+
+<body>
+  <nav class="site-header sticky-top py-1 bg-dark">
+    <div class="container d-flex flex-column flex-md-row justify-content-between">
+      <a class="py-2 d-none d-md-inline-block" href="index.html"><i class="fas fa-home"></i> Inicio</a>
+      <a class="py-2 d-none d-md-inline-block" href="categories.html"><i class="fas fa-globe-americas"></i> Categorías</a>
+      <a class="py-2 d-none d-md-inline-block" href="products.html"><i class="fas fa-cubes"></i> Productos</a>
+      <a class="py-2 d-none d-md-inline-block" href="sell.html"><i class="fas fa-piggy-bank"></i> Vender</a>
+      <a class="py-2 d-none d-md-inline-block" href="login.html"><i class="fas fa-door-open"></i>  Login</a>
+      <a class="py-2 d-none d-md-inline-block" href="cart.html"><i class="fas fa-shopping-cart"></i>Mi carrito  <span id="cant" class="badge alert-warning">0</span></a>
+      <div class= "dropdown">
+        <button type="button" id="nombre" class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+          <i class="far fa-laugh-beam fa-2x"></i>
+        </button>
+        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+          <a class="dropdown-item" href="cart.html"><i class="fas fa-shopping-cart fa-2x"></i>Mi carrito  <span id="cant" class="badge alert-warning">0</span></a>
+          <a class="dropdown-item" href="my-profile.html"><i class="fas fa-user-secret fa-2x"></i>Mi perfil</a>
+          <a class="dropdown-item" onclick="desconectar()"><i class="fas fa-door-closed fa-2x"></i> Cerrar sesión</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+ <script>
+    let usuario = JSON.parse(localStorage.getItem("usuario"));
+    document.getElementById('nombre').innerHTML= usuario.nombre + " " + "está en línea";
+  </script>
+
+
+  <h1 id="auto"></h1>
+  <dl>
+   
+    <dt>Descripción</dt>
+    <p id="descripcion"></p>
+     <div class= "btn-group">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+        Precio
+      </button>
+      <div class="dropdown-menu dropdown-menu-lg-left">
+        <button class="dropdown-item" type="button" id="costo"></button>
+      </div>
+    </div>
+
+    <div class= "btn-group">
+      <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+        Cantidad de vendidos
+      </button>
+      <div class="dropdown-menu dropdown-menu-lg-left">
+        <button class="dropdown-item" type="button" id="vendidos"></button>
+      </div>
+    </div><br>
+    
+    <dt>Imágenes ilustrativas</dt><br>
+    <dd>
+      <div class="container">
+      <div class="carousel slide carousel-fade" id="carouselExampleCaptions" data-ride="carousel">
+        <div class="carousel-inner" id="productImagesGallery">
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+      </div>
+    </div>
+    </dd>
+  </dl>
+
+  <dl>  
+    <dt>Productos relacionados</dt>
+    <dd>
+      <div class="row text-center text-lg-left pt-2" id="relacionado"></div>
+      <div id="relacionados"></div>
+    </dd>
+  </dl>
+
+  <!--<button id="maspuntos" class="btn btn-outline-dark"><i class="fas fa-sort-numeric-up fa-2x"></i></button> <button
+  id="menospuntos" class="btn btn-outline-dark"><i class="fas fa-sort-numeric-up-alt fa-2x"></i></button>-->
+  
+  <h3>Comentarios</h3><br>
+
+       <div id="comments">
+      
+
+
+
+
+      </div>
+   
+
+  
+  
+  <div id="spinner-wrapper">
+    <div class="lds-ring">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </div><br>
+  <form>
+  <b> Puntuación:</b>
+  <p class="puntuacion">
+    
+      <input id="radio1" type="radio" name="estrellas" value="5"onclick="document.getElementById('valor').innerHTML='5'"><!--
+      --><label for="radio1"><i class="fab fa-earlybirds fa-2x" ></i></label><!--
+      --><input id="radio2" type="radio" name="estrellas" value="4" onclick="document.getElementById('valor').innerHTML='4'"><!--
+      --><label for="radio2"><i class="fab fa-earlybirds fa-2x" ></i></label><!--
+      --><input id="radio3" type="radio" name="estrellas" value="3" onclick="document.getElementById('valor').innerHTML='3'"><!--
+      --><label for="radio3"><i class="fab fa-earlybirds fa-2x" ></i></label><!--
+      --><input id="radio4" type="radio" name="estrellas" value="2"onclick="document.getElementById('valor').innerHTML='2'"><!--
+      --><label for="radio4"><i class="fab fa-earlybirds fa-2x" ></i></label><!--
+      --><input id="radio5" type="radio" name="estrellas" value="1" onclick="document.getElementById('valor').innerHTML='1'"><!--
+      --><label for="radio5"><i class="fab fa-earlybirds fa-2x" ></i></label><br>
+     
+    </p>
+  </form>
+  <span id="valor" hidden></span>
+
+  <div class="container ">
+    
+    <div class="col-md-6 pane">
+      <div>
+        <h4>Dejanos tu comentario</h4>
+      </div>
+     
+
+      <div id="estilo"></div>
+        <form>
+         
+             <div class="form-group">
+                <span id="nuevoComentario"></span>
+               <label><textarea id="comment" class="form-control" style="width: 10cm; font-size: medium;"></textarea></label>
+               <a id="msj" href="login.html"></a><br>
+             </div>
+             <button type="button" class="btn btn-outline-dark" onclick="comentar();" style="margin-left: 5cm; width: 4cm;">Enviar</button>
+        </form>
+    </div>
+
+      
+    </div>
+</div>
+<!--<button class="back-to-top" type="button"></button>-->
+<footer class="text-muted bg-light">
+  <div class="container">
+    <p class="float-right">
+      <span class="ir-arriba icon-arrow-up2"><i class="fas fa-angle-double-up"></i></span>
+      
+    </p>
+
+  </div>
+</footer>
+
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.bundle.min.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/product-info.js"></script>
+</body>
+
+</html>

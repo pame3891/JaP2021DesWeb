@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<!-- saved from url=(0049)https://getbootstrap.com/docs/4.3/examples/album/ -->
+<html lang="en">
+
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+
+  <meta name="google-signin-scope" content="profile email">
+    <meta name="google-signin-client_id" content="626358547952-65nbj7ho68ul6e84sbb7nfna3u40cdr7.apps.googleusercontent.com">
+    <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
+
+  <title>eMercado - Todo lo que busques está aquí</title>
+  <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
+  <link href="css/loginstyle.css" rel="stylesheet">
+  
+ 
+  <script src="js/login.js"></script>
+  <script src="js/google.js"></script>
+  <title>Conectate!!</title>
+</head>
+
+<body>
+  
+  <h2 class="alert alert-success">Login</h2>
+  <div class = "container form-group">
+    
+    <label class="form-control"> Nombre: <input placeholder="Poné tu nombre" class="form-control" type="text" id="nombre" required></label><br>
+    <span id="msj"></span><br>
+    <label class="form-control">Contraseña: <input placeholder="Poné tu contraseña" class="form-control" type="password" id="password" required></label>
+    
+    <label><input type="checkbox" id="recordarme"> Recordarme</label><br><br>
+    <button class="btn btn-primary" id="logear" onclick="verificar();">Conectate!!</button><br><br>
+    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div><br>
+    
+    
+  </div>
+  <a href="index.html">No queres loguearte? Entrá aquí como invitado!</a>
+</body>
+</html>

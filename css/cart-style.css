@@ -1,0 +1,92 @@
+
+
+.tabla_productos{
+    display: flex;
+}
+.tabla_productos > img{
+    width: 9rem;
+    object-fit: contain;
+    border-radius: 6px;
+    margin-right: 20px;
+}
+.tabla_cantidad > input{
+    width: 40px;
+    border: none;
+    outline: 0;
+    font-size: 16px;
+    font-weight: 700;
+    margin-right: 30px;
+    margin-bottom: 20px;
+}
+
+.fa-check-circle{
+    color: yellowgreen;
+    margin-top: 30px;
+}
+
+#convertirPesos{
+    margin-left: 1170px;
+
+}
+
+#direccion{
+    width: 15cm;
+}
+
+#numPuerta{
+    width: 15cm;
+}
+
+#esquina{
+    width: 15cm;
+}
+
+.formulario-envio{
+    margin-left: 300px;
+    
+}
+
+.titulo-envio{
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: blue;
+}
+
+.total-envio{
+    margin-left: 500px;
+}
+
+.compra{
+    margin-left: 700px;
+}
+
+.carro{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-style: italic;
+    color: dodgerblue;
+}
+
+.fa-opencart{
+    color: black;
+}
+
+.fa-angle-double-up{
+    display:none;
+    color:rgb(0, 0, 0);
+    right:20px;
+    bottom:20px;
+    padding:20px;
+    cursor:pointer;
+    position: fixed;
+    font-size:40px;
+  }
+
+  h1{
+      animation: bounceInLeft;
+      animation-duration: 2s;
+  }
+
+  h1:hover{
+    animation: rubberBand;
+    animation-duration: 2s;
+}

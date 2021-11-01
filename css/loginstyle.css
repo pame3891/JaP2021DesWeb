@@ -1,0 +1,69 @@
+body{
+   height: 100vh;
+   background: linear-gradient(rgb(219, 243, 200), rgb(230, 199, 231));
+}
+
+h2 {
+    text-align: center;
+    background-color: rgb(168, 241, 99);
+}
+
+.container {
+    text-align: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    width: max-content; 
+    border:5px double rgb(168, 241, 99) ;
+    margin-left: 500px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+.g-signin2 {
+    margin-left: 150px;
+   
+}
+
+.form-control input[type="text"],
+.form-control input[type="password"] {
+  max-width:400px;
+	width: 80%;
+  line-height:3em;
+  margin:1em 2em;
+  border-radius:5px;
+  border:2px solid #f2f2f2;
+  outline:none;
+  padding-left:10px;
+  background-color: rgb(223, 243, 136);
+  
+}
+
+.form-control input[type="text"]:hover,
+.form-control input[type="password"]:hover{
+    background-color: rgb(168, 241, 99);
+}
+
+#logear {
+    background-color:rosybrown;
+    border-color: seagreen;
+}
+
+button{
+    color:white;
+    font-size: 20px;
+    width:125px;
+    height:30px;
+    background-image: -webkit-linear-gradient(top, #eb94d0, #2079b0);
+    border-radius: 28px;
+    text-shadow: 3px 2px 1px #9daef5;
+  
+}
+
+button:hover{
+    background-image: -webkit-linear-gradient(top, #2079b0, #eb94d0);
+}
+
+a{
+    margin-left: 45%;
+}
+
