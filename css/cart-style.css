@@ -58,6 +58,11 @@
 
 .compra{
     margin-left: 700px;
+    background-image: -webkit-linear-gradient(top, #2010b4, #4a94c5);
+}
+
+.compra:hover{
+    background-image: -webkit-linear-gradient(top, #4a94c5, #2010b4);
 }
 
 .carro{
@@ -90,3 +95,27 @@
     animation: rubberBand;
     animation-duration: 2s;
 }
+
+.metodo{
+    margin-left: 100px;
+    }
+
+.btn-secondary{
+    margin-left: 200px;
+    background-image: -webkit-linear-gradient(top, #2010b4, #4a94c5);
+}
+
+.btn-secondary:hover{
+    background-image: -webkit-linear-gradient(top, #4a94c5, #2010b4);
+}
+
+.butstyle{
+    background-image: -webkit-linear-gradient(top, #2010b4, #4a94c5);
+    color: seashell;
+}
+
+.butstyle:hover{
+    color: seashell;
+    background-image: -webkit-linear-gradient(top, #4a94c5, #2010b4);
+}
+
