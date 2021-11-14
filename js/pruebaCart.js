@@ -149,7 +149,7 @@ function pesos(){
 function eliminar(i){
     carrito.splice(i,1);
     mostrarCarrito(carrito);
-    subtotales(porc);
+    subtotales();
 
 }
 
