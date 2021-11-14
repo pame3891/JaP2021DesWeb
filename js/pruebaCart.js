@@ -1,6 +1,3 @@
-//Función que se ejecuta una vez que se haya lanzado el evento de
-//que el documento se encuentra cargado, es decir, se encuentran todos los
-//elementos HTML presentes.
 const carrito_JaP_URL = " https://japdevdep.github.io/ecommerce-api/cart/654.json";
 const cartConteiner = document.getElementById('carrito');
 var carrito = [];
@@ -21,25 +18,20 @@ document.addEventListener("DOMContentLoaded", function(e){
             articulos = resultObj.data;
             carrito = articulos.articles;
 
-
             cantIniciales();
             update();
             pesos();
             mostrarCarrito(carrito);
             subtotales();
             
-            
-           
         }
             
-        
     });
-      document.getElementById("convertirPesos").addEventListener("click", ()=> {
+  document.getElementById("convertirPesos").addEventListener("click", ()=> {
           pesos();
-      })
-
-
-      document.getElementById("tarjetaCredito").addEventListener("click", ()=>{
+    })
+  
+    document.getElementById("tarjetaCredito").addEventListener("click", ()=>{
          document.getElementById("username").disabled = false;
          document.getElementById("cardNumber").disabled = false;
          document.getElementById("vencNumber").disabled = false;
@@ -48,10 +40,9 @@ document.addEventListener("DOMContentLoaded", function(e){
 
          tarjetaBanco = true;
          cuentaBancaria = false;
-         })
+    })
 
-
-      document.getElementById("cuentaBanco").addEventListener("click", ()=>{
+    document.getElementById("cuentaBanco").addEventListener("click", ()=>{
         document.getElementById("username").disabled = true;
         document.getElementById("cardNumber").disabled = true;
         document.getElementById("vencNumber").disabled = true;
@@ -59,46 +50,40 @@ document.addEventListener("DOMContentLoaded", function(e){
         document.getElementById("cuentaNum").disabled = false;
         tarjetaBanco = false;
         cuentaBancaria = true;
-    })
-       
+    })    
       
 });
 
 function mostrarCarrito(array){
     htmlContentToAppend = "";
 
-    
     for (let i=0; i<array.length; i++){
 
       datos = array[i];
    
-  
+      htmlContentToAppend += `
 
-    htmlContentToAppend += `
-
-    <tr>
-        <th scope="row"><i class="far fa-check-circle fa-2x"></i></th>
-        <td class="tabla_productos">
-        <img src=" ${datos.src} " class="img-thumbnail">
-        <h6 class="title">${datos.name}</h6>
-        </td>
-        <td class="tabla_precio"><p>${datos.currency} <span class="tabla_precio">${datos.unitCost}</span></p></td>
-        <td class="tabla_cantidad">
-        <input type="number" value="${cantActualizadas[i]}" class="cantidad" onchange="update(); subtotales();">
-        <button class="delete btn btn-danger" onclick="eliminar(${i})"><i class="far fa-trash-alt"></i></button>
-        </td>
-        <td class="tabla_subtotal" id='res${i}'> </td>
-      </tr>
-
-`
-}
-document.getElementById("carrito").innerHTML = htmlContentToAppend;
+      <tr>
+          <th scope="row"><i class="far fa-check-circle fa-2x"></i></th>
+            <td class="tabla_productos">
+              <img src=" ${datos.src} " class="img-thumbnail">
+               <h6 class="title">${datos.name}</h6>
+            </td>
+            <td class="tabla_precio">
+              <p>${datos.currency} <span class="tabla_precio">${datos.unitCost}</span></p>
+            </td>
+            <td class="tabla_cantidad">
+              <input type="number" value="${cantActualizadas[i]}" class="cantidad" onchange="update(); subtotales();">
+             <button class="delete btn btn-danger" onclick="eliminar(${i})"><i class="far fa-trash-alt"></i></button>
+             </td>
+            <td class="tabla_subtotal" id='res${i}'> </td>
+      </tr>`
+    }
+   document.getElementById("carrito").innerHTML = htmlContentToAppend;
 
 }
 
 function subtotales(){
-
-    //const itemCartTotal = document.querySelector('.costoTotal');
    
     suma = 0;
     let subtotal = 0;
@@ -107,23 +92,23 @@ function subtotales(){
        
    
     for (let i=0; i<carrito.length; i++){
-    subtotal = carrito[i].unitCost * cantActualizadas[i];
-    document.getElementById ('res'+i).innerHTML = carrito[i].currency + " " + subtotal;
+     subtotal = carrito[i].unitCost * cantActualizadas[i];
+     document.getElementById ('res'+i).innerHTML = carrito[i].currency + " " + subtotal;
         suma += subtotal;
     }
    
-     for (let i=0; i<radioEnvio.length; i++){
+    for (let i=0; i<radioEnvio.length; i++){
          
        if(radioEnvio[i].checked){
            envio += parseFloat(radioEnvio[i].value) * parseFloat(suma) /100;
            document.getElementById("costoEnvio").innerHTML = envio;
            
-       }  
-     }
+        }  
+    }
      document.getElementById("costoTotal").innerHTML = suma;
      document.getElementById("totalEnv").innerHTML = parseFloat(envio) + parseFloat(suma);
 
-     }
+}
 
 
 function cantIniciales(){
@@ -160,12 +145,6 @@ function pesos(){
     mostrarCarrito(carrito);
     subtotales();
 }
-
-
-
-  
-  
-
 
 function eliminar(i){
     carrito.splice(i,1);
