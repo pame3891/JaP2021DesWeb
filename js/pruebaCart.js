@@ -73,7 +73,7 @@ function mostrarCarrito(array){
               <p>${datos.currency} <span class="tabla_precio">${datos.unitCost}</span></p>
             </td>
             <td class="tabla_cantidad">
-              <input type="number" value="${cantActualizadas[i]}" class="cantidad" onchange="update(); subtotales();">
+              <input type="number" value="${cantActualizadas[i]}" id="cant${i}" class="cantidad" onchange="update(); subtotales();">
              <button class="delete btn btn-danger" onclick="eliminar(${i})"><i class="far fa-trash-alt"></i></button>
              </td>
             <td class="tabla_subtotal" id='res${i}'> </td>
@@ -180,6 +180,24 @@ function compraButton(){
     let numPuerta = document.getElementById("numPuerta").value.trim();
     let esquina = document.getElementById("esquina").value.trim();
 
+    let datosCompra = "";
+    let cliente = usuario.nombre;
+    
+    
+       
+    for(let i=0; i<carrito.length; i++){
+        let cant = document.getElementById("cant" + i).value;
+        
+
+        datosCompra += "articulo: " + carrito[i].name + " " + "cantidad: " + cant + " " + "precio: " + parseFloat(cant * carrito[i].unitCost);
+        
+        document.getElementById("datosCompra").value = datosCompra;
+        document.getElementById('cliente').value= cliente;
+        
+    }
+    
+    
+
     if(direccion === "" || numPuerta === "" || esquina === ""){
         formulario = false;
     }else{
@@ -211,9 +229,11 @@ function compraButton(){
     }
 
     if(formulario && modal){
+
+        document.getElementById("imprimir").hidden = false;
         swal({
             title: "Grandioso!",
-            text: "Has realizado tu compra exitosamente!",
+            text: "Has realizado tu compra exitosamente! Ahora puedes enviar tus datos en el boton 'Imprimir'",
             icon: "https://media.giphy.com/media/Z9WQLSrsQKH3uBbiXq/giphy.gif",
             button: "Genial!",
           });

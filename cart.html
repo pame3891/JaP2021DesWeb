@@ -45,7 +45,7 @@
       <a class="py-2 d-none d-md-inline-block" href="sell.html"><i class="fas fa-piggy-bank"></i> Vender</a>
       <a class="py-2 d-none d-md-inline-block" href="login.html"><i class="fas fa-door-open"></i>  Login</a>
       <div class= "dropdown">
-        <button type="button" id="nombre" class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
+        <button type="button" id="nombre" name="cliente" class="btn btn-success dropdown-toggle" data-toggle="dropdown" data-display="static" aria-haspopup="true" aria-expanded="false">
           <i class="far fa-laugh-beam fa-2x"></i>
         </button>
         <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
@@ -86,21 +86,24 @@
   </table>
   <br><br>
   <h3 class="titulo-envio">¿Queres que te lo enviemos?</h3><br>
-  <form class="formulario-envio">
+  <form class="formulario-envio" action="http://localhost:3800/pedidos" method="post">
     <div class="form-group row was-validated">
       <label for="direccion" class="col-sm-2 col-form-label">Dirección:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="direccion" placeholder="Direccion" required>
+        <input type="text" class="form-control" name="direccion" id="direccion" placeholder="Direccion" required>
       </div>
       <label for="numPuerta" class="col-sm-2 col-form-label">N° de puerta:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="numPuerta" placeholder="Numero de puerta" required>
+        <input type="text" class="form-control" id="numPuerta" name="numPuerta" placeholder="Numero de puerta" required>
       </div>
       <label for="esquina" class="col-sm-2 col-form-label">Esquina:</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="esquina" placeholder="Esquina" required>
+        <input type="text" class="form-control" id="esquina" name="esquina" placeholder="Esquina" required>
       </div>
     </div>
+    <input type="text" name="datosCompra" id="datosCompra" hidden>
+    <input type = "text" name="cliente2" id="cliente" hidden>
+    <button type="submit" class="btn btn-secondary" id="imprimir" hidden>Imprimir datos</button>
     
     <fieldset class="form-group" name="conjuntoEnvios">
       <div class="row">
@@ -136,7 +139,7 @@
    <button type="button" id="editBoton" class="btn btn-secondary" data-toggle="modal" data-target="#exampleModalCenter"><i class="fas fa-coins"></i> Selecciona aquí</button>
   </div><br>
   <h5 class="total-envio">Total: <span id="totalEnv"></span></h5><br>
-  <button type="button" class="btn btn-success compra" onclick="compraButton()">Comprar!</button>
+  <button type="submit" class="btn btn-success compra" onclick="compraButton()">Comprar!</button>
 
  <div id="spinner-wrapper">
     <div class="lds-ring">

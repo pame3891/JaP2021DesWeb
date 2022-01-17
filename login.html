@@ -11,10 +11,11 @@
     <meta name="google-signin-client_id" content="626358547952-65nbj7ho68ul6e84sbb7nfna3u40cdr7.apps.googleusercontent.com">
     <script src="https://apis.google.com/js/platform.js?onload=onLoad" async defer></script>
 
-  <title>eMercado - Todo lo que busques está aquí</title>
+  
   <link href="https://fonts.googleapis.com/css?family=Raleway:300,300i,400,400i,700,700i,900,900i" rel="stylesheet">
   <link href="css/loginstyle.css" rel="stylesheet">
-  
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+  />
  
   <script src="js/login.js"></script>
   <script src="js/google.js"></script>
@@ -23,19 +24,19 @@
 
 <body>
   
-  <h2 class="alert alert-success">Login</h2>
-  <div class = "container form-group">
-    
-    <label class="form-control"> Nombre: <input placeholder="Poné tu nombre" class="form-control" type="text" id="nombre" required></label><br>
-    <span id="msj"></span><br>
-    <label class="form-control">Contraseña: <input placeholder="Poné tu contraseña" class="form-control" type="password" id="password" required></label>
-    
-    <label><input type="checkbox" id="recordarme"> Recordarme</label><br><br>
-    <button class="btn btn-primary" id="logear" onclick="verificar();">Conectate!!</button><br><br>
-    <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div><br>
-    
-    
-  </div>
-  <a href="index.html">No queres loguearte? Entrá aquí como invitado!</a>
+  <div class="body"></div>
+		<div class="grad"></div>
+		<div class="header">
+			<div>JaP<span>e-commerce</span></div>
+		</div>
+		<br>
+		<div class="login">
+				<input placeholder="Poné tu nombre" class="form-control" type="text" id="nombre" required><br>
+        <span id="msj"></span><br>
+				<input placeholder="Poné tu contraseña" class="form-control" type="password" id="password" required><br>
+        <label><input type="checkbox" id="recordarme"> Recordarme</label><br><br>
+				<input type="button" value="Login" id="logear" onclick="verificar()"><br>
+        <a href="index.html">No queres loguearte? Entrá aquí como invitado!</a>
+		</div>
 </body>
 </html>
